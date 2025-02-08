@@ -3,6 +3,7 @@ package net.teamsolar.simplest_copper_gear.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.teamsolar.simplest_copper_gear.SimplestCopperGear;
@@ -25,7 +26,11 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider){
         // make copper tools only able to mine blocks that stone tools can also mine
-        this.tag(ModTags.Blocks.INCORRECT_FOR_COPPER_TOOL).addTag(BlockTags.INCORRECT_FOR_STONE_TOOL);
+        this.tag(ModTags.Blocks.INCORRECT_FOR_COPPER_TOOL).addTag(BlockTags.INCORRECT_FOR_STONE_TOOL)
+                .remove(BlockTags.GOLD_ORES)
+                .remove(BlockTags.REDSTONE_ORES)
+                .remove(Blocks.GOLD_BLOCK)
+                .remove(Blocks.RAW_GOLD_BLOCK);
     }
 
     @Override

@@ -1,4 +1,10 @@
 {
+  "remove": [
+    "#minecraft:gold_ores",
+    "#minecraft:redstone_ores",
+    "minecraft:gold_block",
+    "minecraft:raw_gold_block"
+  ],
   "values": [
     "#minecraft:incorrect_for_stone_tool"
   ]
